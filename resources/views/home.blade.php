@@ -97,8 +97,8 @@
                 </div>
                 @if(Auth::user()->user_type==1 )
                 <div class="links">
-                    <a href="https://laravel.com/docs">Cadastrar atendimento</a>
-                    <a href="https://laracasts.com">Meus atendimentos</a>
+                    <a href="{{ route('cadastrar_atendimento') }}">Cadastrar atendimento</a>
+                    <a href="{{ route('meus_atendimentos') }}">Meus atendimentos</a>
                 </div>
                 @endif
                 @if(Auth::user()->user_type==2 )

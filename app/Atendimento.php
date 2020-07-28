@@ -6,16 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Atendimento extends Model
 {
-    use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'client_name','observation','id_tipo_atendimento','id_tecnico','execution_date'
     ];
 
-    protected $table = 'atedimento';
+    protected $table = 'atendimento';
 }

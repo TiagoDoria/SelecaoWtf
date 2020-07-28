@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/cadastrar_atendimento', 'AtendimentoController@create')->name('cadastrar_atendimento');
+Route::get('/meus_atendimentos', 'AtendimentoController@meus_atendimentos')->name('meus_atendimentos');
+Route::post('/salvar_atendimento', 'AtendimentoController@save')->name('salvar_atendimento');
 Route::get('/cadastrar_tipo_atendimento', 'TipoAtendimentoController@create')->name('cadastrar_tipo_atendimento');
 Route::post('/salvar_tipo_atendimento', 'TipoAtendimentoController@save')->name('salvar_tipo_atendimento');
 Route::get('/listar_tecnicos', 'GestorController@listar_tecnicos')->name('listar_tecnicos');
