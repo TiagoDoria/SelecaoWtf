@@ -10,7 +10,7 @@ class AtendimentoController extends Controller
 {
     public function create()
     {
-        $tipos = TipoAtendimento::all();
+        $tipos = TipoAtendimento::where('status',true)->get();
         return view('cadastrar_atendimento',compact('tipos'));
     }
     public function save(Request $request)

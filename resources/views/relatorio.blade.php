@@ -11,7 +11,6 @@
   <link href="/css/tabela.css" rel="stylesheet">
 
   <link href="/css/dataTables.css" rel="stylesheet">
-
   <style>
     html, body {
         background-color: #fff;
@@ -64,11 +63,11 @@
         margin-bottom: 30px;
     }
   </style>
-
+  
 </head>
 
 <body>
-@if (Route::has('login'))
+  @if (Route::has('login'))
     <div class="top-right links">
         @auth
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -90,8 +89,8 @@
             @endif
         @endauth
     </div>
-@endif
-
+  @endif
+  <br><br><br>
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -105,7 +104,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Técnicos</h1>
+          <h1 class="h3 mb-2 text-gray-800">Relatório</h1>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-body">
@@ -113,32 +112,35 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nome</th>
-                      <th>Status</th>
-                      <th>Ação</th>
+                    <th>Id</th>
+                      <th>Nome cliente</th>
+                      <th>Observação</th>
+                      <th>Nome do técnico</th>
+                      <th>Tipo</th>
+                      <th>Data</th>
+                      <!-- <th>Ação</th> -->
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Nome</th>
-                      <th>Status</th>
-                      <th>Ação</th>
+                      <th>Id</th>
+                      <th>Nome cliente</th>
+                      <th>Observação</th>
+                      <th>Nome do técnico</th>
+                      <th>Tipo</th>
+                      <th>Data</th>
+                      <!-- <th>Ação</th> -->
                     </tr>
                   </tfoot>
                   <tbody>
-                   @foreach($tecnicos as $tecnico)  
+                   @foreach($atendimentos as $atd)  
                     <tr>
-                      <td>{{$tecnico->name}}</td>
-                      @if($tecnico->status==1)
-                      <td>Ativo</td>
-                      @else
-                      <td>Inativo</td>
-                      @endif
-                      @if($tecnico->status==1)
-                      <td><a href="{{ route('consultar_tecnico',$tecnico->id) }}">Consultar</a> | <a href="{{ route('desativar_tecnico',$tecnico->id) }}">Desativar</a> | <a href="{{ route('deletar_tecnico',$tecnico->id) }}">Excluir</a></td>
-                      @else
-                      <td><a href="{{ route('consultar_tecnico',$tecnico->id) }}">Consultar</a> | <a href="{{ route('ativar_tecnico',$tecnico->id) }}">Ativar</a> | <a href="{{ route('deletar_tecnico',$tecnico->id) }}">Excluir</a></td>
-                      @endif
+                      <td>{{$atd->id}}</td>
+                      <td>{{$atd->client_name}}</td>
+                      <td>{{$atd->observation}}</td>
+                      <td>{{$atd->tecnico->name}}</td>
+                      <td>{{$atd->tipo->name}}</td>
+                      <td>{{$atd->execution_date}}</td>
                     </tr>       
                     @endforeach        
                   </tbody>
@@ -154,10 +156,13 @@
     </div>
 
   </div>
-  <script src="/js/jquery.js"></script>
+  <script src="vendor/jquery/jquery.js"></script>
   <script src="/js/jquery.dataTables.js"></script>
   <script src="/js/dataTables.bootstrap4.js"></script>
   <script src="/js/demo/datatables-demo.js"></script>
 
 </body>
+
+
+
 </html>

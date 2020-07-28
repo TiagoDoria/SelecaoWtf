@@ -12,7 +12,7 @@ class TipoAtendimento extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name','status'
     ];
 
     protected $table = 'tipo_atendimento';

@@ -16,6 +16,7 @@ class CreateTipoAtendimentoTable extends Migration
         Schema::create('tipo_atendimento', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

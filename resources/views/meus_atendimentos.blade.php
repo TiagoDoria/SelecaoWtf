@@ -6,16 +6,69 @@
 
   <title>Pitangueira</title>
 
-  <link href="/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/all.css" rel="stylesheet" type="text/css">
 
   <link href="/css/tabela.css" rel="stylesheet">
 
   <link href="/css/dataTables.css" rel="stylesheet">
+  <style>
+    html, body {
+        background-color: #fff;
+        color: #636b6f;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .full-height {
+        height: 100vh;
+    }
+
+    .flex-center {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .position-ref {
+        position: relative;
+    }
+
+    .top-right {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 84px;
+    }
+
+    .links > a {
+        color: #636b6f;
+        padding: 0 25px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .m-b-md {
+        margin-bottom: 30px;
+    }
+  </style>
+  
 
 </head>
 
 <body>
-@if (Route::has('login'))
+  @if (Route::has('login'))
     <div class="top-right links">
         @auth
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -37,8 +90,8 @@
             @endif
         @endauth
     </div>
-@endif
-
+  @endif
+  <br><br><br>
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -52,7 +105,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Atendimentos</h1>
+          <h1 class="h3 mb-2 text-gray-800">Meus Atendimentos</h1>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-body">
@@ -62,14 +115,14 @@
                     <tr>
                       <th>Nome do cliente</th>
                       <th>Observação</th>
-                      <th>Ação</th>
+                      <!-- <th>Ação</th> -->
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Nome do cliente</th>
                       <th>Observação</th>
-                      <th>Ação</th>
+                      <!-- <th>Ação</th> -->
                     </tr>
                   </tfoot>
                   <tbody>
@@ -77,7 +130,7 @@
                     <tr>
                       <td>{{$atendimento->client_name}}</td>
                       <td>{{$atendimento->observation}}</td>
-                      <td>Visualizar | Desativar | Excluir</td>
+                      <!-- <td>Visualizar | Desativar | <a href="">Excluir</a></td> -->
                     </tr>       
                     @endforeach        
                   </tbody>

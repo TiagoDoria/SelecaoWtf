@@ -104,7 +104,10 @@
                 @if(Auth::user()->user_type==2 )
                 <div class="links">
                     <a href="{{ route('cadastrar_tipo_atendimento') }}">Cadastrar tipo atendimento</a>
+                    <a href="{{ route('listar_tipos_atendimento') }}">Listar tipos de atendimento</a>
+                    <a href="{{ route('cadastrar_tecnico') }}">Cadastrar técnico</a>
                     <a href="{{ route('listar_tecnicos') }}">Listar técnicos</a>
+                    <a href="{{ route('gerar_relatorio') }}">Relatório</a>
                 </div>
                 @endif
             </div>

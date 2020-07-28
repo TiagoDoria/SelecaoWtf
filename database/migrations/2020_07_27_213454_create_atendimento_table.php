@@ -22,6 +22,7 @@ class CreateAtendimentoTable extends Migration
             $table->unsignedBigInteger('id_tecnico')->unsigned()->nullable(true);
             $table->foreign('id_tecnico')->references('id')->on('users');
             $table->date('execution_date');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
